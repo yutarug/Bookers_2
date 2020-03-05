@@ -1,0 +1,32 @@
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+<div class ="container">
+  <div class ="row">
+  	<div class="col-lg-3">
+	<%= render 'books/list', book: @book, user: @user %>
+    </div>
+    <div class ="col-lg-9">
+		<h1>Books</h1>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th></th>
+					<th>Title</th>
+					<th>Opinion</th>
+				</tr>
+   		    </thead>
+ 		 <% @books.each do |book| %>
+			<tbody>
+				<tr>
+					<td><%= attachment_image_tag @user, :profile_image, size:"30x30"%></td>
+					<td><%= link_to book.title, book_path(current_user) %></td>
+					<td><%= book.body %></td>
+				</tr>
+			</tbody>
+ 		 <% end %>
+		</table>
+	</div>
+  </div>
+
+</div>
