@@ -1,3 +1,7 @@
+<% if flash[:notice] %>
+<p><%= flash[:notice] %></p>
+<% end %>
+
 <div class="top-page">
 
 	<h1>welcome to <span class="glyphicon glyphicon-book">Bookers!!</h1>
@@ -7,7 +11,7 @@
 		about various books!</p>
 
 		<button type="button" class="btn btn-info btn-lg first"><%= link_to "Log in", new_user_session_path %></button>
-		<button type="button" class="btn btn-success btn-lg second"><%= link_to "Sign up", new_user_registration_path %></button>
+		<button type="button" class="btn btn-success btn-lg second"><%= link_to "Sign Up", new_user_registration_path %></button>
 </div>
 
 
